@@ -1,0 +1,22 @@
+<div class="row">
+	<div class="columns ten">
+	<h1>Register!</h1>
+		<form action="/users" method="post">
+			<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+			<label for="name">Name</label>
+			<input id="name" type="text" name="user[name]">
+
+			<label for="email">Email</label>
+			<input id="email" type="email" name="user[email]">
+
+			<label for="password">Password</label>
+			<input id="password" type="password" name="user[password]">
+
+			<label for="password_confirmation">Password Confirmation</label>
+			<input id="password_confirmation" type="password" name="user[password_confirmation]">
+			<button type="submit">Join</button>
+		</form>
+	</div>
+	<a href="/sessions/new">Already a member?</a>
+</div>

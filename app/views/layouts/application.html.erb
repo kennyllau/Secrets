@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div class="container">
+
+
+<% if flash[:errors] %>
+
+    <p><%= flash[:errors] %></p>
+
+<% end %>
+
+
+<% if current_user %>
+<div class="row">
+  <div class="columns six u-pull-right">  
+    <form action='/sessions' method='post'>
+      <input type='hidden' name='authenticity_token' value='<%= form_authenticity_token %>'>
+      <input type='hidden' name='_method' value='delete'>
+      <input type='submit' value='logout' class="button-danger">
+    </form>
+  </div>
+</div>
+
+<% end %>
+
+
+
+<%= yield %>
+</div>
+</body>
+</html>
